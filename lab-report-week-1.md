@@ -34,3 +34,34 @@ Using `scp WhereAmI.java cs15lfa22jp@ieng6.ucsd.edu:~/` I will move the file Whe
 
 ## Setting up SSH key
 At this point, every login to the server will need a password to be put in. However there is a way to correct this by generating an SSH key and sending it to the server for use.
+
+To do this we need to use ssh-keygen, which will create a public key and private key.
+
+![sshkeygen](https://raw.githubusercontent.com/JoshuaSimpson1/cse15l-lab-reports/main/Week1LabScreenshots/sshkeygen.png)
+
+Here we start the key generation process with ssh-keygen which will ask which file to save this in and for a passphrase, in this image I entered just the default setting. After it generates it shows an image and tells you where it is saved.
+
+Now we need to move this key to the server, so it too has a copy of the key we made. We do this with `scp` but first we need to make a directory too. After logging back into the sever with ssh use the `mkdir` command in the home directory to create the .ssh directory. The command would look like this: `mkdir .ssh`.
+
+Going back to the client we now need to move the key into the directory we just created.
+
+![scpsshkey](https://raw.githubusercontent.com/JoshuaSimpson1/cse15l-lab-reports/main/Week1LabScreenshots/scpsshkey.png)
+
+We have done this before in the lab so, this should be pretty simple by this point.
+
+![nopasswordlogin](https://raw.githubusercontent.com/JoshuaSimpson1/cse15l-lab-reports/main/Week1LabScreenshots/nopasswordlogin.png)
+
+And the next time you log in on the same computer, Viola! You do not need to type your password again, as shown above.
+
+## Making remoting running more pleasant
+Since students and programmers alike want to make their lives easier, we would like to reduce the amount of work needed to do things.
+
+In the last step we made a lot of progress on this goal, as we don't need to type in our password every single time we want to login. 
+
+Let say instead of logging in to the server then running the command, we do both at the same time. Lets use our WhereAmI.java file as an example.
+
+![runningmultiplecommands](https://raw.githubusercontent.com/JoshuaSimpson1/cse15l-lab-reports/main/Week1LabScreenshots/runningmultiplecommands.png)
+
+Here, instead of doing everything in multiple steps of logging in then compiling then running java, we do this on login. This is done with `ssh "(commands seperated by semicolon)"` in the example we do `ssh cs15lfa22k@ieng6.ucsd.edu "javac WhereAmI.java; java WhereAmI"`
+
+This saves some time, maybe not much, but if you do this a hundred times in a day it will add up to more and more time saved.

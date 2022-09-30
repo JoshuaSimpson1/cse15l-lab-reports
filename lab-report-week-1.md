@@ -25,3 +25,12 @@ Here I used two commands `echo` and `whoami`, `echo` will print out what a type 
 This image shows the echo command printing back what I type, which is a good response, and the whoami command replies back with cs15lfa22kk, which is my user on the server. This means that I am running commands not on my local computer but instead on the server.
 
 ## Moving files with the `scp` command
+The command `scp` will move files remotely from your computer to the server. This is useful for running programs or moving various files that you need on the server.
+![scpimage](https://raw.githubusercontent.com/JoshuaSimpson1/cse15l-lab-reports/main/Week1LabScreenshots/scp.png)
+
+In this I start out on my local machine, compiling the WhereAmI.java and running the program. The output of the java program is that of my local machine showing Windows 10 and my home and root directories.
+
+Using `scp WhereAmI.java cs15lfa22jp@ieng6.ucsd.edu:~/` I will move the file WhereAmI.java to the home directory (~) to the server. When it has completed, I log back into the server with `ssh` and compile and run the same program onto the server machine. The output of this program is different than that of my local machine, instead now showing linux and other directories on the server account. This means the program has ran on the server successfully, and that the output was not from my machine, but instead the server.
+
+## Setting up SSH key
+At this point, every login to the server will need a password to be put in. However there is a way to correct this by generating an SSH key and sending it to the server for use.

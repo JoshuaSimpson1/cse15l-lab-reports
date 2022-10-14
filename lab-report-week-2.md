@@ -209,4 +209,4 @@ static List<String> filter(List<String> list, StringChecker sc) {
 }
 ```
 
-Which returns the expect result `["world","!"]`.
+Which returns the expected result `["world","!"]`.

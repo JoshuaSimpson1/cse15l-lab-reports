@@ -6,7 +6,7 @@ In this example we have 3 files: animals.txt, fruits.txt, fruitsbutcapslock.txt
 
 We are working with these files, with fruitsbutcapslock.txt being in all uppercase.
 
-![Files.txt](Week5LabScreenShots/files.png)
+![Files.txt](https://github.com/JoshuaSimpson1/cse15l-lab-reports/blob/main/Week5LabScreenshots/files.png?raw=true)
 
 So lets try to find the word "dogs" in these files and see what comes up: we will use the command `grep "dogs" *` which will go through all the files and find any containing the word dogs.
 
